@@ -1,14 +1,48 @@
+:root{
+    --header-bg: #1b1b1b;
+}
+
+body{
+    margin: 0;
+    font-family: 'Roboro', sans-serif;
+}
+
+header{
+    margin: 0;
+    background-color: var(--header-bg);
+    color: white;
+}
+
+
+
+.main-nav{
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex: 1 0 auto;
+}
+
+.front-title{
+    margin: 20px;
+}
+
 .front-title{
     font-family: 'Exo', sans-serif;
+    font-size: 35px;
 }
 
 .nav-list{
-    list-style-type: none;
+    height: 10vh;
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
     margin: 0;
     padding: 0;
+    align-items: center;
+    flex: 0 1 auto;
 }
 
-.main_nav{
-    display: flex;
-    flex-direction: row;
+.nav-btn{
+    margin: 15px;
 }
