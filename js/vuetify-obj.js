@@ -1,4 +1,5 @@
 new Vue({
-    el: '#header',
+    el: '#vue-header',
     vuetify: new Vuetify(),
+    data:{}
 })
