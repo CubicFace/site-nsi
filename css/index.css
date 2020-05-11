@@ -1,0 +1,14 @@
+.front-title{
+    font-family: 'Exo', sans-serif;
+}
+
+.nav-list{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main_nav{
+    display: flex;
+    flex-direction: row;
+}
