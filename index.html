@@ -7,14 +7,17 @@
         <link rel="icon" type="image/gif" href="" /> <!-- Trouve une icone -->
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Exo:wght@900&display=swap" rel="stylesheet">
-        <link href="css/index.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+        <link href="css/main.css" rel="stylesheet">
     </head>
 
 
     <body>
 
 
-        <header>
+        <header id="header">
         <!-- Menu de nav -->
             <nav class="main-nav">
                 
@@ -24,9 +27,15 @@
                             NSI | Saint-Charles 
                         </h1>
                     </li>
-                    <li class="nav-btn">Acceuil</li>
-                    <li class="nav-btn">Classes</li>
-                    <li class="nav-btn">Contact</li>
+                    <li class="nav-btn">
+                        <v-btn text dark href="index.html">Acceuil</v-btn>
+                    </li>
+                    <li class="nav-btn">
+                        <v-btn text dark href="classes.html">Classes</v-btn>
+                    </li>
+                    <li class="nav-btn">
+                        <v-btn text dark href="index.html">Contact</v-btn>
+                    </li>
                 </ul>
             </nav> 
         </header>
@@ -73,5 +82,8 @@
                     This website is a NSI project for the 11th grade student, created for help students </p>
             </div>
         </footer>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+        <script src="js/main.js"></script>
     </body>
 </html>
