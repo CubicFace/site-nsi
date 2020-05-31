@@ -13,10 +13,10 @@ app=new Vue({
 setInterval(function(){
     if(app.darkMode){
         document.getElementById("header").style.backgroundColor="#2e2d2d";
-        document.body.style.color="#ffffff";
+        document.getElementsByClassName('front-title')[0].style.color="#ffffff";
     }
     else{
         document.getElementById("header").style.backgroundColor="#f2f2f2";
-        document.body.style.color="#000000";
+        document.getElementsByClassName('front-title')[0].style.color="#000000";
     }
 })

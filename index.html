@@ -34,7 +34,7 @@
                                 <v-btn text :dark="darkMode" href="classes.html">Classes</v-btn>
                             </li>
                             <li class="nav-btn">
-                                <v-btn text :dark="darkMode" @click.stop="contactEnabled = true">Contact</v-btn>
+                                <v-btn text :dark="darkMode" @click.stop="contactEnabled = true">Contact / Connexion</v-btn>
                             </li>
                             <li class="darkMode-switch">
                                 <v-btn
@@ -105,16 +105,12 @@
                             </v-list-item-icon>
 
                             <v-list-item-content>
-                                <v-list-item-title>Contact</v-list-item-title>
+                                <v-list-item-title>Contact / Connexion</v-list-item-title>
                             </v-list-item-content>
                         </v-list-item>
                     </v-list>
 
                 </v-navigation-drawer>
-
-                <p>
-                    Hey, toi qui regarde notre site je te remercie de ta visite, tu trouveras ci-joint des doccuments qui pourront t'interréssé : des cours , des projets afin que tu puisse enrichir tes connaissances 
-                </p>  
                 
                 <v-dialog
                     v-model="contactEnabled"
@@ -137,6 +133,10 @@
                     </v-card>
                 </v-dialog>
 
+                <p>
+                    Hey, toi qui regarde notre site je te remercie de ta visite, tu trouveras ci-joint des doccuments qui pourront t'interréssé : des cours , des projets afin que tu puisse enrichir tes connaissances 
+                </p>  
+
                 <footer id="footer">
                     <div id="footer-left">
                         <h5>NSI | Saint-Charles</h5>
@@ -157,11 +157,6 @@
                             Anthonioz-de Gaulle</span>
                             91200 , Athis-Mons</p>
                         </a>
-                        </div>
-                        <div id="mailduprof">
-                            <p>
-                                <a href="(le mail du prof)">(le mail du prof)</a>
-                            </p>
                         </div>
                     </div>
                     <div id="footer-right">
