@@ -15,73 +15,82 @@
 
 
     <body>
+        <div id="main">
+
+            <header id="header">
+            <!-- Menu de nav -->
+                <nav class="main-nav">
+                    
+                    <ul class="nav-list">
+                        <li class="front-title-nav">
+                            <h1 class="front-title">
+                                NSI | Saint-Charles 
+                            </h1>
+                        </li>
+                        <li class="nav-btn">
+                            <v-btn text dark href="index.html">Acceuil</v-btn>
+                        </li>
+                        <li class="nav-btn">
+                            <v-btn text dark href="classes.html">Classes</v-btn>
+                        </li>
+                        <li class="nav-btn">
+                            <v-btn text dark href="index.html">Contact</v-btn>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="toolbar">
+                    <v-toolbar
+                    dark
+                    >
+                        <v-app-bar-nav-icon @click.stop="drawerEnabled = !drawerEnabled"></v-app-bar-nav-icon>
+                        <v-toolbar-title>NSI | Saint Charles</v-toolbar-title>
+                    </v-toolbar>
+                </div> 
+            </header>
+
+        <!-- Il faut trouvé je pense des img pour illustrer un peu la page d'accueil -->
 
 
-        <header id="header">
-        <!-- Menu de nav -->
-            <nav class="main-nav">
-                
-                <ul class="nav-list">
-                    <li class="front-title-nav">
-                        <h1 class="front-title">
-                            NSI | Saint-Charles 
-                        </h1>
-                    </li>
-                    <li class="nav-btn">
-                        <v-btn text dark href="index.html">Acceuil</v-btn>
-                    </li>
-                    <li class="nav-btn">
-                        <v-btn text dark href="classes.html">Classes</v-btn>
-                    </li>
-                    <li class="nav-btn">
-                        <v-btn text dark href="index.html">Contact</v-btn>
-                    </li>
-                </ul>
-            </nav> 
-        </header>
-
-    <!-- Il faut trouvé je pense des img pour illustrer un peu la page d'accueil -->
-
-
-        <p>
-            Hey, toi qui regarde notre site je te remercie de ta visite, tu trouveras ci-joint des doccuments qui pourront t'interréssé : des cours , des projets afin que tu puisse enrichir tes connaissances 
-        </p>  
+            <p>
+                Hey, toi qui regarde notre site je te remercie de ta visite, tu trouveras ci-joint des doccuments qui pourront t'interréssé : des cours , des projets afin que tu puisse enrichir tes connaissances 
+            </p>  
 
 
 
 
-        <footer id="footer">
-            <div id="footer-left">
-                <h5>NSI | Saint-Charles</h5>
-                <p id="footer-links">
-                    <a href="#">Accueil</a>
-                    <a href="#">Info</a>
-                    <a href="#">Nos projets</a>
-                    <a href="#">Nos cours</a>
-                    <a href="#">Nous contactez</a>
-                </p>
-            </div>
-
-            <div id="footer-center">
-                <div id="adresse">
-                <a href="https://www.google.com/search?q=saint-charles&rlz=1C1CHBF_frFR816FR816&oq=saint-charles&aqs=chrome..69i57j0l7.3539j0j7&sourceid=chrome&ie=UTF-8&sxsrf=ALeKk00VyjWRGZaBX-S3d-zpod70Zhp7jQ:1582466368588&npsic=0&rflfq=1&rlha=0&rllag=48709871,2392161,148&tbm=lcl&rldimm=6408442815839583776&lqi=Cg1zYWludC1jaGFybGVzWh4KDXNhaW50IGNoYXJsZXMiDXNhaW50IGNoYXJsZXM&ved=2ahUKEwi47pLO6ufnAhWExYUKHbW7CnIQvS4wAXoECAsQEg&rldoc=1&tbs=lrf:!1m4!1u2!2m2!2m1!1e1!2m1!1e2!3sIAE,lf:1,lf_ui:2&rlst=f#rlfi=hd:;si:6408442815839583776,l,Cg1zYWludC1jaGFybGVzWh4KDXNhaW50IGNoYXJsZXMiDXNhaW50IGNoYXJsZXM;mv:[[48.710992,2.3936742],[48.7087503,2.3906495999999997]];tbs:lrf:!1m4!1u2!2m2!2m1!1e1!2m1!1e2!3sIAE,lf:1,lf_ui:2">
-                    <p><span>2 Rue Geneviève 
-                    Anthonioz-de Gaulle</span>
-                    91200 , Athis-Mons</p>
-                </a>
-                </div>
-                <div id="mailduprof">
-                    <p>
-                        <a href="(le mail du prof)">(le mail du prof)</a>
+            <footer id="footer">
+                <div id="footer-left">
+                    <h5>NSI | Saint-Charles</h5>
+                    <p id="footer-links">
+                        <a href="#">Accueil</a>
+                        <a href="#">Info</a>
+                        <a href="#">Nos projets</a>
+                        <a href="#">Nos cours</a>
+                        <a href="#">Nous contactez</a>
                     </p>
                 </div>
-            </div>
-            <div id="footer-right">
-                <p class="footer-about">
-                    <span>About the Project</span>
-                    This website is a NSI project for the 11th grade student, created for help students </p>
-            </div>
-        </footer>
+
+                <div id="footer-center">
+                    <div id="adresse">
+                    <a href="https://www.google.com/search?q=saint-charles&rlz=1C1CHBF_frFR816FR816&oq=saint-charles&aqs=chrome..69i57j0l7.3539j0j7&sourceid=chrome&ie=UTF-8&sxsrf=ALeKk00VyjWRGZaBX-S3d-zpod70Zhp7jQ:1582466368588&npsic=0&rflfq=1&rlha=0&rllag=48709871,2392161,148&tbm=lcl&rldimm=6408442815839583776&lqi=Cg1zYWludC1jaGFybGVzWh4KDXNhaW50IGNoYXJsZXMiDXNhaW50IGNoYXJsZXM&ved=2ahUKEwi47pLO6ufnAhWExYUKHbW7CnIQvS4wAXoECAsQEg&rldoc=1&tbs=lrf:!1m4!1u2!2m2!2m1!1e1!2m1!1e2!3sIAE,lf:1,lf_ui:2&rlst=f#rlfi=hd:;si:6408442815839583776,l,Cg1zYWludC1jaGFybGVzWh4KDXNhaW50IGNoYXJsZXMiDXNhaW50IGNoYXJsZXM;mv:[[48.710992,2.3936742],[48.7087503,2.3906495999999997]];tbs:lrf:!1m4!1u2!2m2!2m1!1e1!2m1!1e2!3sIAE,lf:1,lf_ui:2">
+                        <p><span>2 Rue Geneviève 
+                        Anthonioz-de Gaulle</span>
+                        91200 , Athis-Mons</p>
+                    </a>
+                    </div>
+                    <div id="mailduprof">
+                        <p>
+                            <a href="(le mail du prof)">(le mail du prof)</a>
+                        </p>
+                    </div>
+                </div>
+                <div id="footer-right">
+                    <p class="footer-about">
+                        <span>About the Project</span>
+                        This website is a NSI project for the 11th grade student, created for help students </p>
+                </div>
+            </footer>
+        </div>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
         <script src="js/main.js"></script>
