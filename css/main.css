@@ -36,6 +36,9 @@ header{
     .toolbar{
         display: none;
     }
+    .drawer{
+        display: none;
+    }
 }
 
 .front-title{

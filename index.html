@@ -50,7 +50,52 @@
 
         <!-- Il faut trouvé je pense des img pour illustrer un peu la page d'accueil -->
 
+            <v-navigation-drawer
+            class="drawer"
+            v-model="drawerEnabled"
+            absolute
+            dark
+            >
+                <v-list dense>
+                    <v-list-item
+                        href="index.html"
+                    >
 
+                        <v-list-item-icon>
+                            <v-icon>mdi-home</v-icon>
+                        </v-list-item-icon>
+
+                        <v-list-item-content>
+                            <v-list-item-title>Acceuil</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+                    <v-list-item
+                        href="classes.html"
+                    >
+
+                        <v-list-item-icon>
+                            <v-icon>mdi-teach</v-icon>
+                        </v-list-item-icon>
+
+                        <v-list-item-content>
+                            <v-list-item-title>Classes</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+                    <v-list-item
+                        @click
+                    >
+
+                        <v-list-item-icon>
+                            <v-icon>mdi-clipboard-account-outline</v-icon>
+                        </v-list-item-icon>
+
+                        <v-list-item-content>
+                            <v-list-item-title>Contact</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+                </v-list>
+
+            </v-navigation-drawer>
 
             <p>
                 Hey, toi qui regarde notre site je te remercie de ta visite, tu trouveras ci-joint des doccuments qui pourront t'interréssé : des cours , des projets afin que tu puisse enrichir tes connaissances 
