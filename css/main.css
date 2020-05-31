@@ -23,6 +23,21 @@ header{
     flex: 1 0 auto;
 }
 
+.toolbar{
+    opacity: 100;
+}
+
+@media(max-width:763px){
+    .main-nav{
+        display: none;
+    }
+}
+@media(min-width:763px){
+    .toolbar{
+        display: none;
+    }
+}
+
 .front-title{
     margin: 20px;
 }
