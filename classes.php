@@ -1,198 +1,25 @@
 <!DOCTYPE html>
 <html lang="fr">
     
-    <head>
-        <meta charset="UTF-8">
-        <title>NSI | Saint-Charles || Nos classes</title>
-        <link rel="icon" type="image/gif" href="" /> <!-- Trouve une icone -->
-        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Exo:wght@900&display=swap" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-        <link href="css/main.css" rel="stylesheet">
-    </head>
+    <?php include "includes/head.html"?>
+
 
     <body>
         <div id="main">
             <v-app >
-                <header id="header">
-                <!-- Menu de nav -->
-                    <nav class="main-nav">
-                        
-                        <ul class="nav-list">
-                            <li class="front-title-nav">
-                                <h1 class="front-title">
-                                    NSI | Saint-Charles 
-                                </h1>
-                            </li>
-                            <li class="nav-btn">
-                                <v-btn href="index.html">Acceuil</v-btn>
-                            </li>
-                            <li class="nav-btn">
-                                <v-btn text  href="classes.html">Classes</v-btn>
-                            </li>
-                            <li class="nav-btn">
-                                <v-btn text  @click.stop="contactEnabled = true; drawerEnabled=false">Contact / Connexion</v-btn>
-                            </li>
-                            <li class="darkMode-switch">
-                                <v-btn
-                                    absolute
-                                    
-                                    fab
-                                    right
-                                    v-on:click="darkMode = !darkMode"
-                                >
-                                    <v-icon>mdi-theme-light-dark</v-icon>
-                                </v-btn>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div class="toolbar">
-                        <v-toolbar
-                            
-                        >
-                            <v-app-bar-nav-icon @click.stop="drawerEnabled = !drawerEnabled"></v-app-bar-nav-icon>
-                            <v-toolbar-title>NSI | Saint Charles</v-toolbar-title>
-                            <v-spacer></v-spacer>
-                            <v-btn icon v-on:click="darkMode = !darkMode">
-                                <v-icon>mdi-theme-light-dark</v-icon>
-                            </v-btn>
-                        </v-toolbar>
-                    </div> 
-                </header>
+
+                <?php include "includes/header.html" ?>
 
             <!-- Il faut trouvé je pense des img pour illustrer un peu la page d'accueil -->
 
-                <v-navigation-drawer
-                class="drawer"
-                v-model="drawerEnabled"
+                <?php include "includes/vuetify/nav-drawer.html" ?>
                 
-                absolute
-                >
-                    <v-list dense>
-                        <v-list-item>
-                            <v-list-title>Menu</v-list-title>
-                        </v-list-item>
-                        <v-divider></v-divider>
-                        <v-list-item
-                            href="index.html"
-                        >
+                <?php include "includes/vuetify/dialogs/contact.php" ?>
 
-                            <v-list-item-icon>
-                                <v-icon>mdi-home</v-icon>
-                            </v-list-item-icon>
-
-                            <v-list-item-content>
-                                <v-list-item-title>Acceuil</v-list-item-title>
-                            </v-list-item-content>
-                        </v-list-item>
-                        <v-list-item
-                            href="classes.html"
-                        >
-
-                            <v-list-item-icon>
-                                <v-icon>mdi-teach</v-icon>
-                            </v-list-item-icon>
-
-                            <v-list-item-content>
-                                <v-list-item-title>Classes</v-list-item-title>
-                            </v-list-item-content>
-                        </v-list-item>
-                        <v-list-item
-                            @click.stop="contactEnabled = true; drawerEnabled=false"
-                        >
-
-                            <v-list-item-icon>
-                                <v-icon>mdi-clipboard-account-outline</v-icon>
-                            </v-list-item-icon>
-
-                            <v-list-item-content>
-                                <v-list-item-title>Contact / Connexion</v-list-item-title>
-                            </v-list-item-content>
-                        </v-list-item>
-                    </v-list>
-
-                </v-navigation-drawer>
-                
-                <v-dialog
-                    v-model="contactEnabled"
-                    max-width="600px"
-                    
-                >
-                    <v-card>
-                        <v-card-title>Contact</v-card-title>
-                        <v-card-text>Vous pouvez contacter le prof par e-mail ou vous rendre sur le site de Saint-Charles!</v-card-text>
-                        <div class="d-flex flex-lg-row flex-md-row flex-column  justify-space-around py-5 align-center">
-                            <v-btn  class="mb-lg-0 mb-md-0 mb-2" max-width="300px" href="https://scharles.net">Site de Saint-Charles</v-btn>
-                            <v-btn  class="mt-lg-0 mt-md-0 mt-2" max-width="300px" href="mailto:thedjplays.gaming@gmail.com">Envoyer un e-mail au prof</v-btn>
-                        </div>
-                        <v-divider ></v-divider>
-                        <v-card-title>Se connecter au site</v-card-title>
-                        <v-card-text>Vous pouvez vous connecter à un espace personnel sur le site afin de pouvoir interargir avec celui-ci!</v-card-text>
-                        <div class="d-flex flex-lg-row flex-md-row flex-column  justify-space-around py-5 align-center">
-                            <v-btn  class="mb-lg-0 mb-md-0 mb-2" max-width="300px" @click.stop="logIn=!logIn">Se connecter / S'inscrire</v-btn>
-                        </div>
-                        <v-dialog
-                        fullscreen
-                        v-model="logIn"
-                        
-                        transition="dialog-bottom-transition"
-                        >
-                            <v-card tile>
-                                <v-toolbar
-                                
-                                :flat="darkMode"
-                                >
-                                    <v-btn
-                                    icon
-                                    @click="logIn=false">
-                                        <v-icon>mdi-close</v-icon>
-                                    </v-btn>
-                                    <v-toolbar-title>Se connecter / S'inscrire</v-toolbar-title>
-                                </v-toolbar>
-                                <v-form ref="form" method="POST">
-
-                                </v-form>
-                            </v-card>
-
-                        </v-dialog>
-
-                    </v-card>
-                </v-dialog>
-
-                <footer id="footer">
-                    <div id="footer-left">
-                        <h5>NSI | Saint-Charles</h5>
-                        <p id="footer-links">
-                            <a href="#">Accueil</a>
-                            <a href="#">Info</a>
-                            <a href="#">Nos projets</a>
-                            <a href="#">Nos cours</a>
-                            <a href="#">Nous contactez</a>
-                        </p>
-                    </div>
-
-
-                    <div id="footer-center">
-                        <div id="adresse">
-                        <a href="https://www.google.com/search?q=saint-charles&rlz=1C1CHBF_frFR816FR816&oq=saint-charles&aqs=chrome..69i57j0l7.3539j0j7&sourceid=chrome&ie=UTF-8&sxsrf=ALeKk00VyjWRGZaBX-S3d-zpod70Zhp7jQ:1582466368588&npsic=0&rflfq=1&rlha=0&rllag=48709871,2392161,148&tbm=lcl&rldimm=6408442815839583776&lqi=Cg1zYWludC1jaGFybGVzWh4KDXNhaW50IGNoYXJsZXMiDXNhaW50IGNoYXJsZXM&ved=2ahUKEwi47pLO6ufnAhWExYUKHbW7CnIQvS4wAXoECAsQEg&rldoc=1&tbs=lrf:!1m4!1u2!2m2!2m1!1e1!2m1!1e2!3sIAE,lf:1,lf_ui:2&rlst=f#rlfi=hd:;si:6408442815839583776,l,Cg1zYWludC1jaGFybGVzWh4KDXNhaW50IGNoYXJsZXMiDXNhaW50IGNoYXJsZXM;mv:[[48.710992,2.3936742],[48.7087503,2.3906495999999997]];tbs:lrf:!1m4!1u2!2m2!2m1!1e1!2m1!1e2!3sIAE,lf:1,lf_ui:2">
-                            <p><span>2 Rue Geneviève 
-                            Anthonioz-de Gaulle</span>
-                            91200 , Athis-Mons</p>
-                        </a>
-                        </div>
-                    </div>
-                    <div id="footer-right">
-                        <p class="footer-about">
-                            <span>About the Project</span>
-                            This website is a NSI project for the 11th grade student, created for help students </p>
-                    </div>
-                </footer>
+                <?php include "includes/footer.html" ?>
             </v-app>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
-        <script src="js/main.js"></script>
+
     </body>
+    <?php include "includes/vuetify/js.html" ?>
 </html>
