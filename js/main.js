@@ -11,12 +11,16 @@ app=new Vue({
 })
 
 setInterval(function(){
-    if(app.darkMode){
+    app.$vuetify.theme.dark=app.darkMode
+})
+
+setInterval(function(){
+    if(app.$vuetify.theme.isDark){
         document.getElementById("header").style.backgroundColor="#2e2d2d";
         document.getElementsByClassName('front-title')[0].style.color="#ffffff";
     }
     else{
         document.getElementById("header").style.backgroundColor="#f2f2f2";
         document.getElementsByClassName('front-title')[0].style.color="#000000";
-    }
-})
+    };
+});
