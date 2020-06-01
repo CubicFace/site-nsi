@@ -6,7 +6,7 @@ app=new Vue({
         drawerEnabled:false,
         contactEnabled:false,
         logIn:false,
-        signIn:false,
+        signUp:false,
     }
 })
 
