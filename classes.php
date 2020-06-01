@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
     
-    <?php include "includes/head.html"?>
+    <head>
+        
+        <title>NSI | Saint-Charles || Nos Classes</title>
+        <?php include "includes/head.html"?>
+    </head>
+    
 
 
     <body>
