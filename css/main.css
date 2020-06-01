@@ -37,12 +37,12 @@ header{
     opacity: 100;
 }
 
-@media(max-width:773px){
+@media(max-width:935px){
     .main-nav{
         display: none;
     }
 }
-@media(min-width:773px){
+@media(min-width:936px){
     .toolbar{
         display: none;
     }
