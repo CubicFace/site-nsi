@@ -11,7 +11,7 @@ app=new Vue({
             {src:"https://www.scharles.net/wp-content/uploads/2018/01/IMG_7276-e1520330263441.jpg"},
         ],
         carouselPlaceholder:[
-            "red","pink","blue","cyan","indigo","purple"
+            "red","pink","blue","cyan","indigo","purple","indigo darken-3","blue darken-4","green","lime darken-2","yellow darken-4","amber darken-4"
         ]
     }
 })

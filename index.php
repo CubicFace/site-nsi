@@ -14,7 +14,7 @@
 
                 <v-carousel
                 cycle
-                height="450px"
+                height="640px"
                 show-arrows
                 show-arrows-on-hover
                 >
@@ -30,13 +30,10 @@
                         :color="color"
                         height="100%"
                         >
-                            <v-row
-                            class="fill-height"
-                            align="center"
-                            justify="center"
-                            >
+                            <div class="d-flex flex-column justify-space-around align-center">
                                 <div class="display-3">Insérer image</div>
-                            </v-row>
+                                <div class="subtitle-1">{{color}}</div>
+                            </div>
                         </v-sheet>
 
                     </v-carousel-item>
