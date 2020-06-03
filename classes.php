@@ -27,4 +27,9 @@
 
     </body>
     <?php include "includes/vuetify/js.html" ?>
+    <?php
+    if(isset($_GET['dark']) && $_GET['dark']==true){
+        echo "<script>app.darkMode=true</script>";
+    }
+    ?>
 </html>

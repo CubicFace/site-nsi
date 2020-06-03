@@ -7,6 +7,12 @@ app=new Vue({
         contactEnabled:false,
         logIn:false,
         signUp:false,
+        carouselItems:[
+            {src:"https://www.scharles.net/wp-content/uploads/2018/01/IMG_7276-e1520330263441.jpg"},
+        ],
+        carouselPlaceholder:[
+            "red","pink","blue","cyan","indigo","purple"
+        ]
     }
 })
 
@@ -24,3 +30,14 @@ setInterval(function(){
         document.getElementsByClassName('front-title')[0].style.color="#000000";
     };
 });
+
+original_title=document.title
+
+setInterval(function(){
+    if(app.contactEnabled){
+        document.title="NSI | Saint-Charles || Contact / Se connecter"
+    }
+    else{
+        document.title=original_title
+    }
+})

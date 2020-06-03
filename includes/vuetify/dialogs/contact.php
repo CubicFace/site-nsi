@@ -4,6 +4,16 @@
                     
                 >
                     <v-card>
+                        <v-toolbar
+                        flat
+                        >
+                            <v-btn
+                            icon
+                            text
+                            >
+                                <v-icon @click="contactEnabled=false">mdi-close</v-icon>
+                            </v-btn>
+                        </v-toolbar>
                         <v-card-title>Contact</v-card-title>
                         <v-card-text>Vous pouvez contacter le prof par e-mail ou vous rendre sur le site de Saint-Charles!</v-card-text>
                         <div class="d-flex flex-lg-row flex-md-row flex-column  justify-space-around py-5 align-center">
