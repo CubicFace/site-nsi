@@ -112,6 +112,7 @@ elseif(strtoupper($data->action)==="LOGIN" || $data->action===1){
             else{
                 header("Forbidden", true, 403);
                 echo "Wrong credentials.";
+                exit(403);
             }
         }
         catch(Exception $e){
