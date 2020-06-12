@@ -3,7 +3,8 @@ error_reporting(0);
 header("Content-Type: application/json; charset=UTF-8");
 if($_SERVER['REQUEST_METHOD']!=='POST'){
     header('Method Not Allowed', true, 405);
-    echo "Request method needs to be POST";
+    $response->$status="Request method needs to be POST";
+    echo json_encode($response);
     exit(405);
 }
 
@@ -13,7 +14,8 @@ $data=json_decode($request);
 
 if(!isset($data->action)){
     header("Bad Request", true, 400);
-    echo "Action data missing.";
+    $response->$status="Action data missing.";
+    echo json_encode($response);
     exit(400);
 }
 
@@ -24,7 +26,15 @@ if(strtoupper($data->action) === "REGISTER" || $data->action===0){
         isset($data->name)
     ){
         try{
-            $email=$data->email;
+            if(preg_match('[a-z0-9]+([-+._][a-z0-9]+){0,2}@.*?(\.(a(?:[cdefgilmnoqrstuwxz]|ero|(?:rp|si)a)|b(?:[abdefghijmnorstvwyz]iz)|c(?:[acdfghiklmnoruvxyz]|at|o(?:m|op))|d[ejkmoz]|e(?:[ceghrstu]|du)|f[ijkmor]|g(?:[abdefghilmnpqrstuwy]|ov)|h[kmnrtu]|i(?:[delmnoqrst]|n(?:fo|t))|j(?:[emop]|obs)|k[eghimnprwyz]|l[abcikrstuvy]|m(?:[acdeghklmnopqrstuvwxyz]|il|obi|useum)|n(?:[acefgilopruz]|ame|et)|o(?:m|rg)|p(?:[aefghklmnrstwy]|ro)|qa|r[eosuw]|s[abcdeghijklmnortuvyz]|t(?:[cdfghjklmnoprtvwz]|(?:rav)?el)|u[agkmsyz]|v[aceginu]|w[fs]|y[etu]|z[amw])\b){1,2}', $data->email)){
+                $email=$data->email;
+            }
+            else{
+                header("Bad Request", true, 400);
+                $response->status="Bad email format.";
+                echo json_encode($response);
+                exit(400);
+            }
             $password=$data->password;
             $name=$data->name;
             $file=fopen('ID.txt',"r+");
@@ -47,18 +57,21 @@ if(strtoupper($data->action) === "REGISTER" || $data->action===0){
             fputs($file,$file2_content);
             fclose($file);
             fclose($new_file);
-            echo "Success.";
+            $response->$status="Success.";
+            echo json_encode($response);
             exit(200);
         }
         catch(Exception $e){
             header("Internal Server Error", true, 500);
-            echo "Something bad happened. Traceback: $e";
+            $response->$status="Something bad happened. Traceback: $e";
+            echo json_encode($response);
             exit(500);
         }
     }
     else{
         header("Bad Request", true, 400);
-        echo "Invalid format.";
+        $response->$status="Invalid format.";
+        echo json_encode($response);
         exit(400);
     }
 }
@@ -111,26 +124,30 @@ elseif(strtoupper($data->action)==="LOGIN" || $data->action===1){
             }
             else{
                 header("Forbidden", true, 403);
-                echo "Wrong credentials.";
+                $response->$status="Wrong credentials.";
+                echo json_encode($response);
                 exit(403);
             }
         }
         catch(Exception $e){
             header("Internal Server Error", true, 500);
-            echo "Something bad happened. Traceback: $e";
+            $response->$status="Something bad happened. Traceback: $e";
+            echo json_encode($response);
             exit(500);
         }
     }
     else{
         header("Bad Request", true, 400);
-        echo "Invalid format.";
+        $response->$status="Invalid format.";
+        echo json_encode($response);
         exit(400);
     }
 }
 else{
     $action=$data->action;
     header("Bad Request", true, 400);
-    echo "Unknown action: $action";
+    $response->$status="Unknown action: $action";
+    echo json_encode($response);
     exit(400);
 }
 
