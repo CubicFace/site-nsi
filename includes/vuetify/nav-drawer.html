@@ -10,7 +10,7 @@ absolute
         </v-list-item>
         <v-divider></v-divider>
         <v-list-item
-            href="index.html"
+            v-bind:href="darkMode?'index?dark=true':'index'"
         >
             <v-list-item-icon>
                 <v-icon>mdi-home</v-icon>
@@ -21,7 +21,7 @@ absolute
             </v-list-item-content>
         </v-list-item>
         <v-list-item
-            href="classes.html"
+            v-bind:href="darkMode?'classes?dark=true':'classes'"
         >
 
             <v-list-item-icon>

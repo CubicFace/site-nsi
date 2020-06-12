@@ -9,10 +9,10 @@
                     </h1>
                 </li>
                 <li class="nav-btn">
-                    <v-btn text href="index.html">Acceuil</v-btn>
+                    <v-btn text v-bind:href="darkMode?'index?dark=true':'index'">Acceuil</v-btn>
                 </li>
                 <li class="nav-btn">
-                    <v-btn text  href="classes.html">Classes</v-btn>
+                    <v-btn text  v-bind:href="darkMode?'classes?dark=true':'classes'">Classes</v-btn>
                 </li>
                 <li class="nav-btn">
                     <v-btn text  @click.stop="contactEnabled = true; drawerEnabled=false">Contact / Connexion</v-btn>

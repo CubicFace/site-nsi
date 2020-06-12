@@ -17,11 +17,26 @@
                                     <v-toolbar-title>Se connecter / S'inscrire</v-toolbar-title>
                                 </v-toolbar>
                                 <div class="d-flex flex-column my-6 align-center justify-space-around">
-                                    <v-card max-width="600px" class="mb-3">
-                                        <v-card-title class="elevation-12">Se connecter</v-card-title>
+                                    <v-card min-width="350px" max-width="400px" class="mb-3 elevation-12">
+                                        <v-card-title>Se connecter</v-card-title>
+                                            <v-form ref="loginForm" v-model="formModels.loginValid" class="mx-5">
+                                                <v-text-field
+                                                v-model="formModels.loginEmail"
+                                                :rules="formRules.email"
+                                                label="E-mail"
+                                                type="email"
+                                                required
+                                                ></v-text-field>
+                                                <v-text-field
+                                                v-model="formModels.loginPassword"
+                                                label="Mot de passe"
+                                                type="password"
+                                                required
+                                                ></v-text-field>
+                                            </v-form>
                                     </v-card>
-                                    <v-card max-width="600px" class="mt-3">
-                                        <v-card-title class="elevation-12">S'inscrire</v-card-title>
+                                    <v-card max-width="360px" class="mt-3 elevation-12">
+                                        <v-card-title>S'inscrire</v-card-title>
                                     </v-card>
                                 </div>
                             </v-card>
