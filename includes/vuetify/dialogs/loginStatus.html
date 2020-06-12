@@ -1,0 +1,13 @@
+<v-bottom-sheet v-model="formModels.statusSheet">
+    <v-sheet class="text-center" height="200px">
+        <div class="py-5 title">
+            {{ formModels.sheetTitle }}
+        </div>
+        <div class="py-3">
+            {{ formModels.sheetMsg }}
+        </div>
+        <v-btn text class="mt-6" color="red" @click="formModels.statusSheet=!formModels.statusSheet">
+            Fermer
+        </v-btn>
+    </v-sheet>
+</v-bottom-sheet>

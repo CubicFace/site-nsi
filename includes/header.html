@@ -1,45 +1,37 @@
 <header id="header">
     <!-- Menu de nav -->
-        <nav class="main-nav">
-            
-            <ul class="nav-list">
-                <li class="front-title-nav">
-                    <h1 class="front-title">
-                        NSI | Saint-Charles 
-                    </h1>
-                </li>
-                <li class="nav-btn">
-                    <v-btn text v-bind:href="darkMode?'index?dark=true':'index'">Acceuil</v-btn>
-                </li>
-                <li class="nav-btn">
-                    <v-btn text  v-bind:href="darkMode?'classes?dark=true':'classes'">Classes</v-btn>
-                </li>
-                <li class="nav-btn">
-                    <v-btn text  @click.stop="contactEnabled = true; drawerEnabled=false">Contact / Connexion</v-btn>
-                </li>
-                <li class="darkMode-switch">
-                    <v-btn
-                        absolute
-                        
-                        fab
-                        right
-                        v-on:click="darkMode = !darkMode"
-                    >
-                        <v-icon>mdi-theme-light-dark</v-icon>
-                    </v-btn>
-                </li>
-            </ul>
-        </nav>
-        <div class="toolbar">
-            <v-toolbar
-                
-            >
-                <v-app-bar-nav-icon @click.stop="drawerEnabled = !drawerEnabled"></v-app-bar-nav-icon>
-                <v-toolbar-title>NSI | Saint Charles</v-toolbar-title>
-                <v-spacer></v-spacer>
-                <v-btn icon v-on:click="darkMode = !darkMode">
+    <nav class="main-nav">
+
+        <ul class="nav-list">
+            <li class="front-title-nav">
+                <h1 class="front-title">
+                    NSI | Saint-Charles
+                </h1>
+            </li>
+            <li class="nav-btn">
+                <v-btn text v-bind:href="darkMode?'index?dark=true':'index'">Acceuil</v-btn>
+            </li>
+            <li class="nav-btn">
+                <v-btn text v-bind:href="darkMode?'classes?dark=true':'classes'">Classes</v-btn>
+            </li>
+            <li class="nav-btn">
+                <v-btn text @click.stop="contactEnabled = true; drawerEnabled=false">Contact / Connexion</v-btn>
+            </li>
+            <li class="darkMode-switch">
+                <v-btn absolute fab right v-on:click="darkMode = !darkMode">
                     <v-icon>mdi-theme-light-dark</v-icon>
                 </v-btn>
-            </v-toolbar>
-        </div> 
-    </header>
+            </li>
+        </ul>
+    </nav>
+    <div class="toolbar">
+        <v-toolbar>
+            <v-app-bar-nav-icon @click.stop="drawerEnabled = !drawerEnabled"></v-app-bar-nav-icon>
+            <v-toolbar-title>NSI | Saint Charles</v-toolbar-title>
+            <v-spacer></v-spacer>
+            <v-btn icon v-on:click="darkMode = !darkMode">
+                <v-icon>mdi-theme-light-dark</v-icon>
+            </v-btn>
+        </v-toolbar>
+    </div>
+</header>
