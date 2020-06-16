@@ -1,0 +1,29 @@
+<v-dialog v-model="register" max-width=600px>
+    <v-card>
+        <v-toolbar flat>
+            <v-btn icon text>
+                <v-icon @click="register=!register">mdi-close</v-icon>
+            </v-btn>
+            <v-toolbar-title>S'inscrire</v-toolbar-title>
+        </v-toolbar>
+        <div class="justify-center align-center mx-5 mb-5">
+            <p class="caption">Complétez le formulaire pour s'inscrire.</p>
+            <p class="caption">ATTENTION: Ne mettez pas vos vraies informations, ce n'est pas sécurisé. On laisse ce formulaire à titre éducatif.<br>Nous ne sommes pas responsables des conséquences si nous sommes victimes de piratage.</p>
+        </div>
+        <v-form ref="regForm" v-model="formModels.regValid" class="mx-5 mb-5">
+            <v-text-field
+            v-model="formModels.regName"
+            :rules="formRules.name"
+            :disabled="formModels.loading"
+            label="Nom*"
+            required
+            ></v-text-field>
+            <v-text-field v-model="formModels.regEmail" :rules="formRules.email" :disabled="formModels.loading" label="E-mail*" type="email" required></v-text-field>
+            <v-text-field v-model="formModels.regPassword" :rules="formRules.password" :disabled="formModels.loading" label="Mot de passe*" type="password" required></v-text-field>
+            <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn :disabled="!formModels.regValid || formModels.loading" depressed :loading="formModels.loading" color="light-blue" @click="regValidate">S'inscrire</v-btn>
+            </v-card-actions>
+        </v-form>
+    </v-card>
+</v-dialog>

@@ -15,7 +15,7 @@
         <v-card-title>Se connecter au site</v-card-title>
         <v-card-text>Vous pouvez vous connecter à un espace personnel sur le site afin de pouvoir interargir avec celui-ci!</v-card-text>
         <div class="d-flex flex-lg-row flex-md-row flex-column  justify-space-around py-5 align-center">
-            <v-btn class="mb-lg-0 mb-md-0 mb-2" max-width="300px" @click.stop="logIn=!logIn">Se connecter / S'inscrire</v-btn>
+            <v-btn class="mb-lg-0 mb-md-0 mb-2" max-width="300px" @click.stop="logIn=!logIn">Se connecter</v-btn>
         </div>
 
         <?php include "login.php" ?>

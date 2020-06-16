@@ -1,3 +1,4 @@
+/////////////// Vue.js + Vuetify
 app = new Vue({
     el: '#main',
     vuetify: new Vuetify(),
@@ -8,6 +9,7 @@ app = new Vue({
         drawerEnabled: false,
         contactEnabled: false,
         logIn: false,
+        register: false,
         signUp: false,
         carouselItems: [{
             src: "https://www.scharles.net/wp-content/uploads/2018/01/IMG_7276-e1520330263441.jpg"
@@ -17,10 +19,9 @@ app = new Vue({
         ],
 
         formModels: {
+            loading:false,
             loginValid: false,
-            loginLoading: false,
             regValid: false,
-            regLoading: false,
             loginEmail: '',
             loginPassword: '',
             regEmail: '',
@@ -49,9 +50,59 @@ app = new Vue({
 
     },
     methods: {
-        regValidate: function () {},
+        regValidate: function () {
+            this.$data.formModels.loading =true
+            regData = {
+                "action":"register",
+                "name":this.$data.formModels.regName,
+                "email":this.$data.formModels.regEmail,
+                "password":this.$data.formModels.regPassword
+            }
+            if (this.$refs.regForm.validate()) {
+                var request = new XMLHttpRequest();
+                request.open("POST", "api/loginApi", true);
+                request.setRequestHeader("Content-Type", "application/json");
+                request.onreadystatechange = function () {
+                    if (request.readyState === 4) {
+                        var response = JSON.parse(request.responseText);
+                        switch (request.status) {
+                            case 200:
+                                app.$data.formModels.sheetTitle = "Vous êtes inscrit!";
+                                app.$data.formModels.sheetMsg = "Vous pouvez dès à présent vous connecter!";
+                                break;
+
+                            case 400:
+                                app.$data.formModels.sheetTitle = "Erreur (400: Bad request)";
+                                app.$data.formModels.sheetMsg = `Erreur syntaxique de la requête. Message: '${response.status}'`;
+                                break;
+
+                            case 403:
+                                app.$data.formModels.sheetTitle = "Erreur (403: Forbidden)";
+                                app.$data.formModels.sheetMsg = "Erreur non attendue.";
+                                break;
+
+                            case 405:
+                                app.$data.formModels.sheetTitle = "Erreur (405: Method Not Allowed)";
+                                app.$data.formModels.sheetMsg = `La méthode de la requête n'est pas acceptée. Message: '${response.status}'`;
+                                break;
+
+                            default:
+                                this.$data.formModels.sheetTitle = `Erreur (${request.status}: ${request.statusText})`
+                                this.$data.formModels.sheetMsg = "Erreur inconnue.";
+
+                                break;
+                        };
+                        app.$data.formModels.loading = false
+                        app.$data.register=false
+                        app.$data.formModels.statusSheet = true
+                    };
+                };
+                var data = JSON.stringify(regData);
+                request.send(data);
+            }
+        },
         loginValidate: function () {
-            this.$data.formModels.loginLoading = true
+            this.$data.formModels.loading = true
             loginData = {
                 "action": "login",
                 "email": this.$data.formModels.loginEmail,
@@ -91,7 +142,7 @@ app = new Vue({
 
                                 break;
                         };
-                        app.$data.formModels.loginLoading = false
+                        app.$data.formModels.loading = false
                         app.$data.formModels.statusSheet = true
                     };
                 };
@@ -99,10 +150,17 @@ app = new Vue({
                 request.send(data);
 
             }
+        },
+        statusClose:function(){
+            app.$data.formModels.statusSheet=false
+            app.$data.logIn=false
         }
 
     }
 })
+///////////////
+
+
 
 setInterval(function () {
     app.$vuetify.theme.dark = app.darkMode;
